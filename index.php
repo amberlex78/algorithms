@@ -26,35 +26,43 @@ $label = 'Fibonacci';
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // Get data from PHP
-    const canvas = document.getElementById('chart');
-    const ctx = canvas.getContext('2d');
-    const label = canvas.getAttribute('data-label');
-    const x = JSON.parse(canvas.getAttribute('data-x'));
-    const y = JSON.parse(canvas.getAttribute('data-y'));
+    function getDataFromCanvas() {
+        const canvas = document.getElementById('chart');
+        return {
+            canvas: canvas,
+            ctx: canvas.getContext('2d'),
+            label: canvas.getAttribute('data-label'),
+            x: JSON.parse(canvas.getAttribute('data-x')),
+            y: JSON.parse(canvas.getAttribute('data-y'))
+        };
+    }
 
-    // Create chart using Chart.js
-    const myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: x,
-            datasets: [{
-                label: label,
-                data: y,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true
+    function createChart(data) {
+        return new Chart(data.ctx, {
+            type: 'line',
+            data: {
+                labels: data.x,
+                datasets: [{
+                    label: data.label,
+                    data: data.y,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
+    }
+
+    const chartData = getDataFromCanvas();
+    const myChart = createChart(chartData);
 </script>
 
 
