@@ -1,0 +1,21 @@
+{
+    "name": "amberlex78/algorithms",
+    "autoload": {
+        "psr-4": {
+            "Algorithms\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Oleksii Abrosymov",
+            "email": "amberlex78@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.13",
+        "symfony/var-dumper": "^7.0"
+    }
+}
