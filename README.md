@@ -3,9 +3,10 @@
 Classification of algorithms by execution time.
 
 Asymptotic complexity: estimating the execution time of an algorithm when the size of the input data approaches infinity. Typically written using "O-notation".
+
 Classification of algorithms by execution time:
 
-| Временная сложность | Алгоритм |
+| Time complexity | Algorithm |
 | --- | --- |
 | O(1) | Constant Time |
 | O(log n) | Logarithmic Time |
@@ -18,6 +19,7 @@ Classification of algorithms by execution time:
 
 ```shell
 git clone git@github.com:amberlex78/algorithms.git && cd algorithms
+composer insatll
 ```
 
 ### Run server
